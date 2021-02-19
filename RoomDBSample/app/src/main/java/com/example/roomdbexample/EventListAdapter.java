@@ -11,9 +11,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.example.roomdbexample.roomdb.Event;
 
 import java.util.List;
+
+import roomdb.Event;
 
 public class EventListAdapter extends ArrayAdapter<Event> {
     public EventListAdapter(@NonNull Context context, @NonNull List<Event> objects) {
