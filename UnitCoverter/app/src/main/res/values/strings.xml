@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Unit Coverter</string>
+    <string-array name="converter">
+        <item>ChooseCategory</item>
+        <item>Celcius</item>
+        <item>Kilogram</item>
+        <item>Kilometer</item>
+        <item>Meter</item>
+    </string-array>
 </resources>

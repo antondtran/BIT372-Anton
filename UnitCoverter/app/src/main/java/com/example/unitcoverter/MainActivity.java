@@ -2,47 +2,59 @@ package com.example.unitcoverter;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        Button fbtn = findViewById(R.id.convert_btn);
-        Button enterBtn = findViewById(R.id.enterBtn);
-
-        EditText poundsInput = findViewById(R.id.poundsInput);
-        TextView kgText = findViewById(R.id.kgText);
-
-        EditText finput = findViewById(R.id.fahrenheit_input);
-        TextView ctxt = findViewById(R.id.celcius_text);
+        Spinner spinner = findViewById(R.id.spinner);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.converter, android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(this);
 
 
-        fbtn.setOnClickListener(v -> {
-            if (finput.getText().length() == 0)
-                return;
-            double celcius = Converter.toCelcius(Float.parseFloat(finput.getText().toString()));
-            ctxt.setText(String.format("%.2f ºC", celcius));
-        });
 
-        enterBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (poundsInput.getText().length() == 0)
-                    return;
-                double kg = Converter.toKG(Float.parseFloat(poundsInput.getText().toString()));
-                kgText.setText(String.format("%.2f kg", kg));
-
-            }
-        });
 
 
     }
+
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+        String text = parent.getItemAtPosition(position).toString();
+        Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
+        if (text.equals("ChooseCategory")){
+        }else if (text.equals("Celcius")){
+            Intent intent = new Intent(this, toCelciusActivity.class);
+            startActivity(intent);
+        } else if (text.equals("Kilogram")){
+            Intent intent = new Intent(this, toKilogramActivity.class);
+            startActivity(intent);
+        } else if (text.equals("Kilometer")){
+            Intent intent = new Intent(this, toKilometerActivity.class);
+            startActivity(intent);
+        } else if (text.equals("Meter")){
+            Intent intent = new Intent(this, toMeterActivity.class);
+            startActivity(intent);
+        }
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
+
 }

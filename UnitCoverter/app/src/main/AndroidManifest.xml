@@ -9,6 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.UnitCoverter">
+        <activity android:name=".toMeterActivity"></activity>
+        <activity android:name=".toCelciusActivity" />
+        <activity android:name=".toKilometerActivity" />
+        <activity android:name=".toKilogramActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
