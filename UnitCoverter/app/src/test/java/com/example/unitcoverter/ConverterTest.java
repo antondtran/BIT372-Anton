@@ -18,4 +18,16 @@ public class ConverterTest {
     public void pound_conversion_isCorrect() {
         assertEquals(9.072, Converter.toKG(20),0.01);
     }
+
+    @Test
+    public void mile_conversion_isCorrect() {
+        assertEquals(9.072, Converter.toKG(20),0.01);
+    }
+
+    @Test
+    public void feet_conversion_isCorrect() {
+        assertEquals(9.072, Converter.toKG(20),0.01);
+    }
+
+
 }
