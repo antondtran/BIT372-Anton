@@ -1,6 +1,7 @@
 package com.example.unitcoverter;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -24,10 +25,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.converter, android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
-
-
-
-
 
     }
 

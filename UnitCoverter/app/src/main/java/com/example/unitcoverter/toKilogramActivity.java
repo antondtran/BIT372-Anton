@@ -21,12 +21,14 @@ public class toKilogramActivity extends AppCompatActivity{
         setContentView(R.layout.activity_to_kilogram);
 
 
-        Button enterBtn = findViewById(R.id.enterBtn);
+
+        Button backBtnKg = findViewById(R.id.backBtnKG);
+        Button convertBtn = findViewById(R.id.convertBtn);
 
         EditText poundsInput = findViewById(R.id.poundsInput);
         TextView kgText = findViewById(R.id.kgText);
 
-        enterBtn.setOnClickListener(new View.OnClickListener() {
+        convertBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (poundsInput.getText().length() == 0)
@@ -34,6 +36,14 @@ public class toKilogramActivity extends AppCompatActivity{
                 double kg = Converter.toKG(Float.parseFloat(poundsInput.getText().toString()));
                 kgText.setText(String.format("%.2f kg", kg));
 
+            }
+        });
+
+        backBtnKg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(toKilogramActivity.this, MainActivity.class);
+                startActivity(intent);
             }
         });
     }

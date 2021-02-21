@@ -1,13 +1,17 @@
 package com.example.unitcoverter;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+
+import com.example.unitcoverter.databinding.ActivityToCelciusBinding;
+
 
 public class toCelciusActivity extends AppCompatActivity {
 
@@ -16,8 +20,19 @@ public class toCelciusActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_to_celcius);
 
+
+        User user = new User("Fahrenheit to Celcius");
+
+        ActivityToCelciusBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_to_celcius);
+        binding.setLifecycleOwner(this);
+        binding.setUser(user);
+
+
+
+
+
         Button fbtn = findViewById(R.id.convert_btn);
-        Button backBtn = findViewById(R.id.backBtn);
+        Button backBtnCelcius = findViewById(R.id.backBtnCelcius);
 
 
         EditText finput = findViewById(R.id.fahrenheit_input);
@@ -31,7 +46,7 @@ public class toCelciusActivity extends AppCompatActivity {
             ctxt.setText(String.format("%.2f ºC", celcius));
         });
 
-        backBtn.setOnClickListener(new View.OnClickListener() {
+        backBtnCelcius.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(toCelciusActivity.this, MainActivity.class);
