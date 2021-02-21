@@ -16,12 +16,12 @@ public class toMeterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_to_meter);
 
-        Button convertBtn = findViewById(R.id.convertBtn);
+        Button convertBtnFt = findViewById(R.id.convertBtnFt);
         EditText feetInput = findViewById(R.id.feetInput);
         TextView meterText = findViewById(R.id.meterText);
         Button backBtnMeter = findViewById(R.id.backBtnMeter);
 
-        convertBtn.setOnClickListener(new View.OnClickListener() {
+        convertBtnFt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (feetInput.getText().length() == 0)

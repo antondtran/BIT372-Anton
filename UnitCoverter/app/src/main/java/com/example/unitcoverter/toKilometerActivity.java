@@ -17,12 +17,12 @@ public class toKilometerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_to_kilometer);
 
         Button backBtnKM = findViewById(R.id.backBtnKM);
-        Button convertBtn = findViewById(R.id.convertBtn);
+        Button convertBtnKm = findViewById(R.id.convertBtnKM);
 
         EditText milesInput = findViewById(R.id.milesInput);
         TextView kmText = findViewById(R.id.kmText);
 
-        convertBtn.setOnClickListener(new View.OnClickListener() {
+        convertBtnKm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (milesInput.getText().length() == 0)

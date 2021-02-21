@@ -23,12 +23,12 @@ public class toKilogramActivity extends AppCompatActivity{
 
 
         Button backBtnKg = findViewById(R.id.backBtnKG);
-        Button convertBtn = findViewById(R.id.convertBtn);
+        Button convertBtnKg = findViewById(R.id.convertBtnKG);
 
         EditText poundsInput = findViewById(R.id.poundsInput);
         TextView kgText = findViewById(R.id.kgText);
 
-        convertBtn.setOnClickListener(new View.OnClickListener() {
+        convertBtnKg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (poundsInput.getText().length() == 0)
